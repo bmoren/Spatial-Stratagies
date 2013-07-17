@@ -16,6 +16,7 @@ This project uses PhoneGap, Jquery, and JqueryMobile
 * Add option to submit new cues
 * Add Clean up design
 * Add Splash Screens and Icons
+* Add Geo Location Tracker / mapping, ability to map points of interest, add notes, and draw a pathway.
 
 
 ----------------

@@ -1,0 +1,34 @@
+@font-face
+{
+font-family: QSL;
+src: url(Quicksand/Quicksand-Light.ttf);
+}
+
+@font-face
+{
+font-family: QSR;
+src: url(Quicksand/Quicksand-Regular.ttf);
+}
+
+body {
+	font-family: QSR, "helvetica", "helvetica nue", "arial", sans-serif;
+	text-align:left;
+}
+
+p {
+	font-family: QSR, "helvetica", "helvetica nue", "arial", sans-serif;
+	text-align:left;
+}
+
+label{
+
+	font-family: QSR, "helvetica", "helvetica nue", "arial", sans-serif;
+}
+
+.HUD {
+font-size: 50px;
+/*text-shadow: 2px 2px 2px #9f9f9f;*/
+font-family: QSL, "helvetica", "helvetica nue", "arial", sans-serif;
+/*text-transform:uppercase;*/
+}
+

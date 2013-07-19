@@ -22,22 +22,42 @@
 
 		<div data-role="panel" id="mypanel" data-display="push">
 
+			<div id="instructions">
+				<p class="inst">Welcome to Spatial Strategies. This app will deliver notifications to help direct your actions and pathways. Pay close attention to your surroundings. Try to see details around you in new and aesthetic ways. 
+				</p>
+			</div>
+
+			<hr>
+
 			<label for="slider-duration">duration of walk (in minutes): </label>
 			<input type="range" name="slider-duration" id="slider-duration" value="30" min="5" max="120" data-highlight="true" data-mini="true" />
 
 			<label for="slider-interval">message interval (in minutes): </label>
 			<input type="range" name="slider-interval" id="slider-interval" value="4" min="1" max="5" data-highlight="true" data-mini="true" />
 
-			<input id="goButton" type="button" value="Start My Walk" />
+			<hr>
 
-			<div id="instructions">
-			<p class="inst">Welcome to spatial strategies. you'll receive notifications which direct your actions and pathways. Pay close attention to your surroundings. Try to see details around you in new and aesthetic ways.
-
-
-			Let the next notifications influence your direction or focus. Begin walking in any direction now. keep moving.
-			</p>
+			<div class="left" >
+				<label for="flip-1">vibrate:</label>
+				<select name="flip-1" id="flip-1" data-role="slider" data-mini="true">
+				  <option value="off">Off</option>
+				  <option value="on" selected>On</option>
+				</select>
 			</div>
 
+			<div>
+				<label for="flip-1">sound:</label>
+				<select name="flip-2" id="flip-2" data-role="slider" data-mini="true">
+				  <option value="off">Off</option>
+				  <option value="on" selected>On</option>
+				</select>
+			</div>
+
+			<hr>
+
+			<div>
+				<input id="goButton" type="button" value="Start My Walk" />
+			</div>
 		</div><!-- /panel -->
 	</div><!-- /page1-->
 </body>

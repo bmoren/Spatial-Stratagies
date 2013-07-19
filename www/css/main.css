@@ -23,6 +23,7 @@ p {
 label{
 
 	font-family: QSR, "helvetica", "helvetica nue", "arial", sans-serif;
+	
 }
 
 .HUD {
@@ -32,3 +33,26 @@ font-family: QSL, "helvetica", "helvetica nue", "arial", sans-serif;
 /*text-transform:uppercase;*/
 }
 
+.inst{
+	font-family: QSR, "helvetica", "helvetica nue", "arial", sans-serif;
+	text-align:left;
+	font-size: 14px;
+
+}
+
+.left{
+
+float:left;
+
+}
+.left{
+
+float:right;
+
+}
+
+.clear{
+
+clear:both;
+
+}

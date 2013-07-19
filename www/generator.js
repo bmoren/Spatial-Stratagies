@@ -7,7 +7,8 @@ function onDeviceReady() {
 	}
 	// Vibrate for 2 seconds
 	function vibrate() {
-		navigator.notification.vibrate(2000);
+		navigator.notification.vibrate(1000);
+		console.log("vibrate function fired");
 	}
 
 var task = new Array(
@@ -82,7 +83,10 @@ shuffle(foo);
 /////BEGIN ENGINE //////
 
 window.maxTime = 30 ;
-window.interval = 4 ;
+window.interval = 240000 ;
+
+window.sound_noti = "on" ;
+window.vib_noti = "on" ;
 
 $(document).ready(function() {
 
@@ -93,11 +97,18 @@ $(document).ready(function() {
 	$("#mypanel" ).panel( "open" );
 
 	$('body').change(function() {
-		//get the slider value
+
+		//get the slider values
 		var slider_duration = $('#slider-duration').val();
 		console.log("duration_slider:", slider_duration);
 		var slider_interval = $('#slider-interval').val();
 		console.log("interval_slider:", slider_interval);
+
+		//set the sound/vib to gloval vars bound to the window object
+		window.vib_noti = $('#flip-1').val();
+		console.log("vib_nori var:", window.vib_noti);
+		window.sound_noti = $('#flip-2').val();
+		console.log("sound_noti var:", window.sound_noti);
 
 		//How many times to repeat / how many tasks?
 		window.maxTime = Math.round(slider_duration/slider_interval);
@@ -116,19 +127,18 @@ var i = 0 ;
 
 		});
 
+		// take a look into this to make sure it only the start my walk button.
 		$(':button').on( "tap", function( event ) {
 
 			$( "#mypanel" ).panel( "close" );
 
 			// FIX THIS // Add a begin walking in any direction NOW message!
-			$("#HUD").fadeOut('fast');
+			$("#HUD").html("begin walking in any direction now");
 
-			// var timeoutIntro = window.setTimeout( function(){
-			// 	$("#HUD").html("begin walking in any direction");
-			// 	$("#HUD").fadeIn('slow');
-			// }, window.interval-5000);
+			var timeoutIntro = window.setTimeout( function(){
+				$("#HUD").fadeOut('2000');
+			}, window.interval-2000);
 
-			// $("#HUD").fadeOut('fast');
 
 			var newTask = setInterval(function(){
 
@@ -136,9 +146,9 @@ var i = 0 ;
 
 				if (i >= window.maxTime) {
 					clearInterval(newTask);
-					$("#HUD").html("End");
-					playBeep();
-					vibrate();
+					$("#HUD").html("the end of the walk, look around.");
+					if(window.sound_noti === "on"){playBeep();}
+					if(window.vib_noti === "on"){vibrate();}
 
 					//reset
 					i = 0 ;
@@ -151,8 +161,8 @@ var i = 0 ;
 					var timeoutID = window.setTimeout( function(){$("#HUD").fadeOut('2000');}, window.interval-2000);
 					//get a new task
 					$("#HUD").html(task[foo[i]]);
-					playBeep();
-					vibrate();
+					if(window.sound_noti === "on"){playBeep();}
+					if(window.vib_noti === "on"){vibrate();}
 				}
 			},window.interval);
 		});

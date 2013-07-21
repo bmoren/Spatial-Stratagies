@@ -1,15 +1,24 @@
-function onLoad(){ document.addEventListener("deviceready", onDeviceReady, false); }
+function playBeep() {
+	$.playSound('beep.wav');
+}
+// Vibrate for 2 seconds
+function vibrate() {
+	navigator.vibrate(1000);
+	console.log("vibrate function fired");
+}
 
-function onDeviceReady() {
+function shuffle(o){ //v1.0
+for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+return o;
+}
 
-	function playBeep() {
-		navigator.notification.beep(1);
-	}
-	// Vibrate for 2 seconds
-	function vibrate() {
-		navigator.notification.vibrate(1000);
-		console.log("vibrate function fired");
-	}
+function range(start, end) {
+    var foo = [];
+    for (var i = start; i <= end; i++) {
+        foo.push(i);
+    }
+    return foo;
+}
 
 var task = new Array(
 "turn when you see red",
@@ -55,30 +64,12 @@ var task = new Array(
 var totalTaskNum = task.length ;
 console.log("total number of tasks:", totalTaskNum);
 
-////////////Get a non-repeating random number (this is overly complex)//////////////
-function range(start, end) {
-    var foo = [];
-    for (var i = start; i <= end; i++) {
-        foo.push(i);
-    }
-    return foo;
-}
-
 //generate an array with a range of numbers = to the number of tasks available, this is to be shuffled which will give us our non-repeting-random #
 var foo = range(0, totalTaskNum);
-
 console.log("foo:", foo);
-
-function shuffle(o){ //v1.0
-    for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-    return o;
-}
 
 //mix up the array of numbers in a range from 0 to totalTaskNum
 shuffle(foo);
-
-///////////end ger non-rep-rand
-
 
 /////BEGIN ENGINE //////
 window.maxTime = 30 ;
@@ -88,9 +79,6 @@ window.sound_noti = "on" ;
 window.vib_noti = "on" ;
 
 $(document).ready(function() {
-
-	//$("#mypanel").panel({ swipeClose: false });
-	//$( "#mypanel" ).panel({ display: "push" });
 
 	//open panel
 	$("#mypanel" ).panel( "open" );
@@ -133,6 +121,7 @@ var i = 0 ;
 
 			$("#HUD").html("begin walking in any direction now");
 
+
 			var timeoutIntro = window.setTimeout( function(){
 				$("#HUD").fadeOut('2000');
 			}, window.interval-2000);
@@ -144,7 +133,8 @@ var i = 0 ;
 
 				if (i >= window.maxTime) {
 					clearInterval(newTask);
-					$("#HUD").html("the end of the walk, look around.");
+					$("#HUD").html("this is the end of the walk, look around.");
+
 					if(window.sound_noti === "on"){playBeep();}
 					if(window.vib_noti === "on"){vibrate();}
 
@@ -159,14 +149,13 @@ var i = 0 ;
 					var timeoutID = window.setTimeout( function(){$("#HUD").fadeOut('2000');}, window.interval-2000);
 					//get a new task
 					$("#HUD").html(task[foo[i]]);
+
 					if(window.sound_noti === "on"){playBeep();}
 					if(window.vib_noti === "on"){vibrate();}
 				}
 			},window.interval);
 		});
     });
-
-}
 
 
 

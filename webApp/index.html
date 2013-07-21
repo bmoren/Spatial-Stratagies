@@ -4,20 +4,22 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone-no">
 	<meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi">
-	<title>Our Application</title>
+	<title>spatial strategies</title>
 	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.3.1.css">
 	<link rel="stylesheet" href="css/main.css">
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.mobile-1.3.1.js"></script>
-	<script src="cordova.js"></script>
+	<!--WE DONT NEED CORDOVA FOR THE WEB APP!-->
+	<!--<script src="cordova.js"></script>-->
 	<script src="generator.js"></script>
+	<script src="js/jquery.playSound.js"></script>
 
 </head>
-<body onload="onLoad();">
+<body>
  
 	<div id="page1" data-role="page">
 		<div data-role="content" id="display">
-				<p class="HUD" id="HUD">spatial strategies</p>
+				<span class="HUD" id="HUD">spatial strategies</span>
 		</div><!-- /content -->
 
 		<div data-role="panel" id="mypanel" data-display="reveal" data-swipe-close="false">

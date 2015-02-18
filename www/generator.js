@@ -1,16 +1,3 @@
-function onLoad(){ document.addEventListener("deviceready", onDeviceReady, false); }
-
-function onDeviceReady() {
-
-	function playBeep() {
-		navigator.notification.beep(1);
-	}
-	// Vibrate for 2 seconds
-	function vibrate() {
-		navigator.notification.vibrate(1000);
-		console.log("vibrate function fired");
-	}
-
 var task = new Array(
 "turn when you see red",
 "turn around",
@@ -52,10 +39,7 @@ var task = new Array(
 "cover one eye"
 );//end array
 
-var totalTaskNum = task.length ;
-console.log("total number of tasks:", totalTaskNum);
-
-////////////Get a non-repeating random number (this is overly complex)//////////////
+////////////Get a non-repeating random number //////////////
 function range(start, end) {
     var foo = [];
     for (var i = start; i <= end; i++) {
@@ -65,16 +49,14 @@ function range(start, end) {
 }
 
 //generate an array with a range of numbers = to the number of tasks available, this is to be shuffled which will give us our non-repeting-random #
-var foo = range(0, totalTaskNum);
-
-console.log("foo:", foo);
+var foo = range(0, task.length );
 
 function shuffle(o){ //v1.0
     for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
 }
 
-//mix up the array of numbers in a range from 0 to totalTaskNum
+//mix up the array of numbers in a range from 0 to task.length 
 shuffle(foo);
 
 ///////////end ger non-rep-rand
@@ -165,8 +147,6 @@ var i = 0 ;
 			},window.interval);
 		});
     });
-
-}
 
 
 

@@ -12,16 +12,12 @@ This project uses PhoneGap, Jquery, and JqueryMobile
 
 #### Roadmap ####
 * Add More notifications
-* Add Landscape Mode
 * Add option to submit new cues
-* Add Clean up design
-* Add Splash Screens and Icons
-* Add Geo Location Tracker / mapping, ability to map points of interest, add notes, and draw a pathway.
-
+* Clean up design
 
 ----------------
 
-Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported
+©2015 Ben Moren
 
 
 

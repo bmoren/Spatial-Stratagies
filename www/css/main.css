@@ -26,6 +26,15 @@ label{
 	
 }
 
+a{
+	font-size: 12px;
+}
+
+.borderline{
+	border-bottom: 1px solid black;
+	margin: 15px 0px 15px 0px;
+}
+
 .HUD {
 font-size: 45px;
 /*text-shadow: 2px 2px 2px #9f9f9f;*/
@@ -40,19 +49,18 @@ font-family: QSL, "helvetica", "helvetica nue", "arial", sans-serif;
 
 }
 
-.left{
 
+.switches{
+padding: 0px 20px 0px 20px;
+}
+
+.left{
 float:left;
-
 }
-.left{
-
+.right{
 float:right;
-
 }
-
 .clear{
-
 clear:both;
 
 }

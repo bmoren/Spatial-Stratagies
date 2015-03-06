@@ -59,7 +59,7 @@ function onDeviceReady() {
 
 	var i = 0 ;
 
-	$(document).ready(function() {
+	$(function() { //Start jQuery Bix
 
 		$("#task").hide();
   		$("#ack").hide();
@@ -127,7 +127,7 @@ function onDeviceReady() {
 
 				$("#HUD").html("begin walking in any direction now");
 
-				//WHAT IS THIS?
+				//Clear the initial message utside of the mian interval loop
 				var timeoutIntro = window.setTimeout( function(){ $("#HUD").fadeOut('2000'); }, window.interval-2000);
 
 				//MAIN INTERVAL ENGINE
@@ -144,7 +144,7 @@ function onDeviceReady() {
 						//reset
 						i = 0 ;
 						shuffle(foo);
-						$("#mypanel" ).panel( "open" );
+						$("#param" ).fadeIn("slow");
 
 					} else{
 						i++ ;
@@ -155,8 +155,8 @@ function onDeviceReady() {
 						if(window.vib_noti === "on"){vibrate();}
 					}
 				},window.interval);
-			});
-	    });
+			}); //Close Main Go Button
+	});//Close onDocumentReady
 }; //Close onDeviceReady
 
 

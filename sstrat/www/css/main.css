@@ -1,0 +1,66 @@
+@font-face
+{
+font-family: QSL;
+/*src: url(Quicksand/Quicksand-Light.ttf);*/
+src:url(Oxygen/Oxygen-Light.ttf);
+}
+
+@font-face
+{
+font-family: QSR;
+/*src: url(Quicksand/Quicksand-Regular.ttf);*/
+src:url(Oxygen/Oxygen-Regular.ttf);
+}
+
+body {
+	font-family: QSR, "helvetica", "helvetica nue", "arial", sans-serif;
+	text-align:left;
+}
+
+p {
+	font-family: QSR, "helvetica", "helvetica nue", "arial", sans-serif;
+	text-align:left;
+}
+
+label{
+
+	font-family: QSR, "helvetica", "helvetica nue", "arial", sans-serif;
+	
+}
+
+a{
+	font-size: 12px;
+}
+
+.borderline{
+	border-bottom: 1px solid black;
+	margin: 15px 0px 15px 0px;
+}
+
+.HUD {
+font-size: 45px;
+/*text-shadow: 2px 2px 2px #9f9f9f;*/
+font-family: QSL, "helvetica", "helvetica nue", "arial", sans-serif;
+/*text-transform:uppercase;*/
+}
+
+.inst{
+	font-family: QSR, "helvetica", "helvetica nue", "arial", sans-serif;
+	text-align:left;
+	font-size: 14px;
+
+}
+
+.switches{
+padding: 0px 20px 0px 20px;
+}
+
+.left{
+float:left;
+}
+.right{
+float:right;
+}
+.clear{
+clear:both;
+}

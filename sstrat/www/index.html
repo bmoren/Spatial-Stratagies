@@ -14,61 +14,89 @@
 </head>
 <body onload="onLoad()">
  
-	<div id="page1" data-role="page">
-		<div data-role="content" id="display">
-				<p class="HUD" id="HUD"></p>
-		</div><!-- /content -->
+	<div id="container" data-role="page">
+		<div id="task" class="card">
+				<p id="HUD"></p>
+		</div><!-- /task -->
 
-		<div data-role="panel" id="mypanel" data-display="reveal" data-swipe-close="false">
+		<!-- <div data-role="panel" id="mypanel" data-display="reveal" data-swipe-close="false"> -->
+		<div id="param" class="card">
 
 			<div id="instructions">
-				<p class="inst">Welcome to Spatial Strategies. This app will deliver notifications to help direct your actions and pathways. Pay close attention to your surroundings. Try to see details around you in new and aesthetic ways. 
+				<p>Welcome to Spatial Strategies. This app delivers open ended notifications to help direct your actions and pathways while walking in urban space. Pay close attention to your surroundings. Try to see details around you in new and aesthetic ways. 
 				</p>
 			</div>
 
 			<div class="borderline"></div>
 
-			<label for="slider-duration">duration of walk (in minutes): </label>
+			<label for="slider-duration">duration of walk (minutes): </label>
 			<input type="range" name="slider-duration" id="slider-duration" value="30" min="1" max="90" data-highlight="true"  />
 
-			<label for="slider-interval">message interval (in minutes): </label>
+			<label for="slider-interval">message interval (minutes): </label>
 			<input type="range" name="slider-interval" id="slider-interval" value="3" min="1" max="5" data-highlight="true" /> 
 
 
 			<div class="borderline"></div>
 			
+			<div id="switchCont">
+				<div class="switch" >
+					<label for="flip-1">vibrate:</label>
+					<select name="flip-1" id="flip-1" data-role="slider" data-mini="true">
+					  <option value="off">Off</option>
+					  <option value="on" selected>On</option>
+					</select>
+				</div>
 
-			<div class="left switches" >
-				<label for="flip-1">vibrate:</label>
-				<select name="flip-1" id="flip-1" data-role="slider" data-mini="true">
-				  <option value="off">Off</option>
-				  <option value="on" selected>On</option>
-				</select>
-			</div>
-
-			<div class="right switches">
-				<label for="flip-1">sound:</label>
-				<select name="flip-2" id="flip-2" data-role="slider" data-mini="true">
-				  <option value="off">Off</option>
-				  <option value="on" selected>On</option>
-				</select>
-			</div>
-
-			<div class="borderline clear"></div>
-
-			<div>
-				<input id="goButton" type="button" value="Start My Walk" />
+				<div class="switch">
+					<label for="flip-1">sound:</label>
+					<select name="flip-2" id="flip-2" data-role="slider" data-mini="true">
+					  <option value="off">Off</option>
+					  <option value="on" selected>On</option>
+					</select>
+				</div>
 			</div>
 
 			<div class="borderline clear"></div>
 
 			<div>
-				<a href="#">Licensing and Acknowledgements</a>
+				<input id="goButton" type="button" value="Start The Walk" />
+			</div>
+
+			<div class="borderline"></div>
+
+			<div>
+				<a href="#" id="openack">Licensing and Acknowledgements</a>
 				<br />
-				<a href="#">Submit a new strategy</a>
+				<a href="#" id="opensubmit">Submit a new strategy</a>
 			</div>
 
-		</div><!-- /panel -->
+		</div><!-- /param -->
+
+		<div id="ack" class="card">
+				<img id="closeack" src="img/close.jpg" />
+				<p>This activity is made possible by the voters of Minnesota through a Minnesota State Arts Board Operating Support grant, thanks to a legislative appropriation from the arts and cultural heritage fund.</p>
+				<img src="img/logos.png" class="logo" />
+				<div class="borderline"></div>
+				<p>Spatial Strategies uses technology from:
+				jQuery,
+				jQuery Mobile,
+				Apache Cordova,
+				&amp; Adobe PhoneGap.</p>
+				<p>Spatial Strategies is based on Guy Debord's Theory of the Dérive</p>
+		</div><!-- /ack -->
+
+			<div id="submit" class="card">
+				<img id="closesubmit" src="img/close.jpg" />
+				<form action="submit.js">
+					What is your strategy? <br /><input type="text" name="strategy" />
+					<input id="goButton" type="submit" value="Submit Strategy" />
+				</form>
+		</div><!-- /submit -->
+
+
+
+
+
 	</div><!-- /page1-->
 
 	<!-- JS INCLUDES -->

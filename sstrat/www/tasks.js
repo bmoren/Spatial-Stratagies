@@ -36,6 +36,5 @@ var task = new Array(
 "follow the directions on the next street sign your see",
 "walk towards the tallest building in sight",
 "whistle or hum a song",
-"close one eye",
-
+"close one eye"
 );//end array

@@ -24,7 +24,7 @@ function vibrate(){
 
 
 // device APIs are available?
-//function onDeviceReady() {
+function onDeviceReady() {
   // Now safe to use device APIs
 
 	////////////Get a non-repeating random number //////////////
@@ -61,12 +61,40 @@ function vibrate(){
 
 	$(document).ready(function() {
 
-		//$("#mypanel").panel({ swipeClose: false });
-		//$( "#mypanel" ).panel({ display: "push" });
+		$("#task").hide();
+  		$("#ack").hide();
+  		$("#submit").hide();
+		/////////////////////////////
+		////ACKNOWLEDGEMENTS PAGE////
+		/////////////////////////////
+		$('#openack').on( "tap", function( event ) {
+			$('#param').fadeOut("slow", openAck);
+			function openAck(){$("#ack").fadeIn("slow");}
+		});
 
-		//open panel
-		$("#mypanel" ).panel( "open" );
+		$('#closeack').on( "tap", function( event ) {
+			$("#ack").fadeOut("slow", openParam);
+			function openParam(){$("#param").fadeIn("slow");}
+		});
 
+		///////////////////
+		////SUBMIT PAGE////
+		///////////////////
+
+		$('#opensubmit').on( "tap", function( event ) {
+			$("#param").fadeOut("slow", openSubmit);
+			function openSubmit(){$("#submit").fadeIn("slow");}
+		});
+
+		$('#closesubmit').on( "tap", function( event ) {
+			$("#submit").fadeOut("slow", openParam);
+			function openParam(){$("#param").fadeIn("slow");}
+		});
+
+
+		//////////////////////////////
+		////PARAM PAGE & TASK PAGE////
+		//////////////////////////////
 		$('body').change(function() {
 
 			//get the slider values
@@ -88,22 +116,21 @@ function vibrate(){
 
 			//console.log("maxTime:", maxTime, "   interval:", interval);
 
-		});
+		}); //close the body change
 
-			// oepn the panel on a right swipe
-			// $("#page1").on("swiperight", function( event ) {
-			// $("#mypanel" ).panel( "open" );
-			// });
-
-			// take a look into this to make sure it only the start my walk button.
+			///MAIN GO BUTTON!
 			$('#goButton').on( "tap", function( event ) {
 
-				$( "#mypanel" ).panel( "close" );
+				//close the param window, oepn task window
+				$("#param").fadeOut("slow", openTask);
+				function openTask(){$("#task").fadeIn("slow");}
 
 				$("#HUD").html("begin walking in any direction now");
+
+				//WHAT IS THIS?
 				var timeoutIntro = window.setTimeout( function(){ $("#HUD").fadeOut('2000'); }, window.interval-2000);
 
-
+				//MAIN INTERVAL ENGINE
 				var newTask = setInterval(function(){
 
 					$("#HUD").fadeIn('slow');
@@ -121,7 +148,7 @@ function vibrate(){
 
 					} else{
 						i++ ;
-						console.log(i + ' / ' + window.maxTime);
+						//console.log(i + ' / ' + window.maxTime);
 						var timeoutID = window.setTimeout( function(){ $("#HUD").fadeOut('2000'); }, window.interval-2000);
 						$("#HUD").html(task[foo[i]]); 	//get a new task
 						if(window.sound_noti === "on"){playBeep();}
@@ -130,7 +157,7 @@ function vibrate(){
 				},window.interval);
 			});
 	    });
-//}; //Close onDeviceReady
+}; //Close onDeviceReady
 
 
 

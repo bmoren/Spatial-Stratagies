@@ -15,21 +15,15 @@ src:url(Oxygen/Oxygen-Regular.ttf);
 body {
 	font-family: QSR, "helvetica", "helvetica nue", "arial", sans-serif;
 	text-align:left;
-}
-
-p {
-	font-family: QSR, "helvetica", "helvetica nue", "arial", sans-serif;
-	text-align:left;
-}
-
-label{
-
-	font-family: QSR, "helvetica", "helvetica nue", "arial", sans-serif;
-	
+	font-size: 14px;
 }
 
 a{
 	font-size: 12px;
+}
+
+.card{
+	padding: 3% 10% 3% 10%;
 }
 
 .borderline{
@@ -37,30 +31,35 @@ a{
 	margin: 15px 0px 15px 0px;
 }
 
-.HUD {
-font-size: 45px;
-/*text-shadow: 2px 2px 2px #9f9f9f;*/
-font-family: QSL, "helvetica", "helvetica nue", "arial", sans-serif;
-/*text-transform:uppercase;*/
+#task{
+	font-size: 45px;
 }
 
-.inst{
-	font-family: QSR, "helvetica", "helvetica nue", "arial", sans-serif;
-	text-align:left;
-	font-size: 14px;
+#switchCont{
+	width:230px;
+	margin:auto;
+}
+
+#ack{
+	font-size: 12px;
+}
+
+#switchCont label{
+	text-align: center;
+}
+
+.switch{
+	float:left;
+	padding: 0px 20px 0px 20px;
+}
+
+.logo{width:100%;}
+
+.vertAlign{
 
 }
 
-.switches{
-padding: 0px 20px 0px 20px;
-}
-
-.left{
-float:left;
-}
-.right{
-float:right;
-}
 .clear{
 clear:both;
 }
+

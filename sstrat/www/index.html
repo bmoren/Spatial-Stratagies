@@ -12,28 +12,28 @@
 	<link rel="stylesheet" href="jquery/jquery.mobile.structure-1.4.5.min.css" />
 	<link rel="stylesheet" href="css/main.css">
 </head>
-<body onload="onLoad()">
+<body>
  
 	<div id="container" data-role="page">
 		<div id="task" class="card">
-				<p id="HUD"></p>
+			<p id="HUD"></p>
 		</div><!-- /task -->
 
 		<!-- <div data-role="panel" id="mypanel" data-display="reveal" data-swipe-close="false"> -->
 		<div id="param" class="card">
 
 			<div id="instructions">
-				<p>Welcome to Spatial Strategies. This app delivers open ended notifications to help direct your actions and pathways while walking in urban space. Pay close attention to your surroundings. Try to see details around you in new and aesthetic ways. 
+				<p>Welcome to Spatial Strategies. This app delivers open ended notifications to help direct your actions and pathways while moving through urban space. Pay close attention to your surroundings. Try to see details around you in new and aesthetic ways. Always keep moving!
 				</p>
 			</div>
 
 			<div class="borderline"></div>
 
 			<label for="slider-duration">duration of walk (minutes): </label>
-			<input type="range" name="slider-duration" id="slider-duration" value="30" min="1" max="90" data-highlight="true"  />
+			<input type="range" name="slider-duration" id="slider-duration" value="30" min="5" max="90" data-highlight="true"  />
 
 			<label for="slider-interval">message interval (minutes): </label>
-			<input type="range" name="slider-interval" id="slider-interval" value="3" min="1" max="5" data-highlight="true" /> 
+			<input type="range" name="slider-interval" id="slider-interval" value="1" min="1" max="5" data-highlight="true" /> 
 
 
 			<div class="borderline"></div>
@@ -73,20 +73,21 @@
 		</div><!-- /param -->
 
 		<div id="ack" class="card">
-				<img id="closeack" src="img/close.jpg" />
-				<p>This activity is made possible by the voters of Minnesota through a Minnesota State Arts Board Operating Support grant, thanks to a legislative appropriation from the arts and cultural heritage fund.</p>
-				<img src="img/logos.png" class="logo" />
-				<div class="borderline"></div>
-				<p>Spatial Strategies uses technology from:
-				jQuery,
-				jQuery Mobile,
-				Apache Cordova,
-				&amp; Adobe PhoneGap.</p>
-				<p>Spatial Strategies is based on Guy Debord's Theory of the Dérive</p>
+				<img id="closeack" class="close"  src="img/close.jpg" />
+					<p>This activity is made possible by the voters of Minnesota through a Minnesota State Arts Board Operating Support grant, thanks to a legislative appropriation from the arts and cultural heritage fund.</p>
+					<img src="img/logos.png" class="logo" />
+					<div class="borderline"></div>
+					<p>Spatial Strategies uses technology from:
+					jQuery,
+					jQuery Mobile,
+					Apache Cordova,
+					&amp; Adobe PhoneGap.</p>
+					<p>Spatial Strategies is based on Guy Debord's Theory of the Dérive</p>
+
 		</div><!-- /ack -->
 
 			<div id="submit" class="card">
-				<img id="closesubmit" src="img/close.jpg" />
+				<img id="closesubmit" class="close" src="img/close.jpg" />
 				<form action="submit.js">
 					What is your strategy? <br /><input type="text" name="strategy" />
 					<input id="goButton" type="submit" value="Submit Strategy" />
@@ -94,10 +95,7 @@
 		</div><!-- /submit -->
 
 
-
-
-
-	</div><!-- /page1-->
+	</div><!-- /container-->
 
 	<!-- JS INCLUDES -->
 	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
@@ -105,5 +103,6 @@
 	<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
 	<script src="tasks.js"></script>
 	<script src="generator.js"></script>
+	<script type="text/javascript"> onLoad(); </script>
 
 </body>

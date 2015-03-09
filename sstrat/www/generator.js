@@ -1,33 +1,31 @@
 
 
 ///////////////Cordova Bix
-  // Wait for device API libraries to load
-    //
-    function onLoad() {
-        document.addEventListener("deviceready", onDeviceReady, false);
-    }
+// Wait for device API libraries to load
+function onLoad() {
+    document.addEventListener("deviceready", onDeviceReady, false);
+}
 
-
-
-////////NOTIFICATION FUNCTIONS///////
+/////////////////////////////
+////NOTIFICATION FUNCTIONS///
+/////////////////////////////
 function playBeep(){
 	//console.log('beep!');
-	navigator.notification.beep();
-
+	navigator.notification.beep(1);
 }
 
 function vibrate(){
 	//console.log('bzzzzz,bzzzzz');
 	navigator.notification.vibrate(1000);
-
 }
 
-
 // device APIs are available?
-function onDeviceReady() {
+ //function onDeviceReady() {
   // Now safe to use device APIs
 
-	////////////Get a non-repeating random number //////////////
+	/////////////////////////////
+	////GEN NON-REP RAND/////////
+	/////////////////////////////
 	function range(start, end) {
 	    var foo = [];
 	    for (var i = start; i <= end; i++) {
@@ -50,9 +48,12 @@ function onDeviceReady() {
 	///////////end ger non-rep-rand
 
 
-	/////BEGIN ENGINE //////
+	/////////////////////////////
+	////BEGIN ENGINE/////////////
+	/////////////////////////////
+	//defult is 30minute walk, 1min interval, change here and in index.html if needed
 	window.maxTime = 30 ;
-	window.interval = 240000 ;
+	window.interval = 60000 ;
 
 	window.sound_noti = "on" ;
 	window.vib_noti = "on" ;
@@ -99,27 +100,30 @@ function onDeviceReady() {
 
 			//get the slider values
 			var slider_duration = $('#slider-duration').val();
-			//console.log("duration_slider:", slider_duration);
+			console.log("duration_slider:", slider_duration);
 			var slider_interval = $('#slider-interval').val();
-			//console.log("interval_slider:", slider_interval);
+			console.log("interval_slider:", slider_interval);
 
 			//set the sound/vib to gloval vars bound to the window object
 			window.vib_noti = $('#flip-1').val();
-			//console.log("vib_nori var:", window.vib_noti);
+			console.log("vib_nori var:", window.vib_noti);
 			window.sound_noti = $('#flip-2').val();
-			//console.log("sound_noti var:", window.sound_noti);
+			console.log("sound_noti var:", window.sound_noti);
 
 			//How many times to repeat / how many tasks?
 			window.maxTime = Math.round(slider_duration/slider_interval);
 			//the interval of new tasks (in milleseconds)
 			window.interval = slider_interval*60000 ;
 
-			//console.log("maxTime:", maxTime, "   interval:", interval);
 
 		}); //close the body change
 
-			///MAIN GO BUTTON!
+			/////////////////////////////
+			////MAIN GO!!////////////////
+			/////////////////////////////
 			$('#goButton').on( "tap", function( event ) {
+
+				console.log("maxTime:", maxTime, "   interval:", interval);
 
 				//close the param window, oepn task window
 				$("#param").fadeOut("slow", openTask);
@@ -148,7 +152,7 @@ function onDeviceReady() {
 
 					} else{
 						i++ ;
-						//console.log(i + ' / ' + window.maxTime);
+						console.log(i + ' / ' + window.maxTime);
 						var timeoutID = window.setTimeout( function(){ $("#HUD").fadeOut('2000'); }, window.interval-2000);
 						$("#HUD").html(task[foo[i]]); 	//get a new task
 						if(window.sound_noti === "on"){playBeep();}
@@ -157,7 +161,7 @@ function onDeviceReady() {
 				},window.interval);
 			}); //Close Main Go Button
 	});//Close onDocumentReady
-}; //Close onDeviceReady
+//}; //Close onDeviceReady
 
 
 

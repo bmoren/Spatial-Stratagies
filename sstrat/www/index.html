@@ -7,33 +7,35 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 	<title>Spatial Strategies</title>
-	<link rel="stylesheet" href="jquery/themes/blackWhite.css" />
-	<link rel="stylesheet" href="jquery/themes/jquery.mobile.icons.min.css" />
+	<!-- <link rel="stylesheet" type="text/css" href="jquery/blkbacktheme/blackbkg.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="jquery/blkbacktheme/jquery.mobile.icons.min.css"> -->
+	<link rel="stylesheet" href="jquery/whtbacktheme/blackWhite.css" />
+	<link rel="stylesheet" href="jquery/whtbacktheme/jquery.mobile.icons.min.css" />
 	<link rel="stylesheet" href="jquery/jquery.mobile.structure-1.4.5.min.css" />
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
- 
-	<div id="container" data-role="page">
+
+	<div id="container" data-role="page"> 
 		<div id="task" class="card">
-			<p id="HUD"></p>
+			<div id="HUD"></div>
 		</div><!-- /task -->
 
-		<!-- <div data-role="panel" id="mypanel" data-display="reveal" data-swipe-close="false"> -->
 		<div id="param" class="card">
 
 			<div id="instructions">
-				<p>Welcome to Spatial Strategies. This app delivers open ended notifications to help direct your actions and pathways while moving through urban space. Pay close attention to your surroundings. Try to see details around you in new and aesthetic ways. Always keep moving!
+				<div id="title">Spatial Strategies</div>
+				<p>This app delivers open ended messages to help direct your actions and pathways while moving through urban space. Pay close attention to your surroundings. Try to see details around you in new and aesthetic ways. Always keep moving!
 				</p>
 			</div>
 
 			<div class="borderline"></div>
 
 			<label for="slider-duration">duration of walk (minutes): </label>
-			<input type="range" name="slider-duration" id="slider-duration" value="30" min="5" max="90" data-highlight="true"  />
+			<input type="range" name="slider-duration" id="slider-duration" value="30" min="5" max="90" data-highlight="true" step="5"  />
 
 			<label for="slider-interval">message interval (minutes): </label>
-			<input type="range" name="slider-interval" id="slider-interval" value="1" min="1" max="5" data-highlight="true" /> 
+			<input type="range" name="slider-interval" id="slider-interval" value="3" min="1" max="5" data-highlight="true" /> 
 
 
 			<div class="borderline"></div>
@@ -64,35 +66,23 @@
 
 			<div class="borderline"></div>
 
-			<div>
-				<a href="#" id="openack">Licensing and Acknowledgements</a>
-				<br />
-				<a href="#" id="opensubmit">Submit a new strategy</a>
+			<div id="footer">
+				<a href="#" id="openack">Acknowledgements <!-- &amp; Licensing --></a>
 			</div>
 
 		</div><!-- /param -->
 
 		<div id="ack" class="card">
-				<img id="closeack" class="close"  src="img/close.jpg" />
-					<p>This activity is made possible by the voters of Minnesota through a Minnesota State Arts Board Operating Support grant, thanks to a legislative appropriation from the arts and cultural heritage fund.</p>
-					<img src="img/logos.png" class="logo" />
+					<div id="closeAck"><img class="close" src="img/close1px30p.jpg" /></div>
 					<div class="borderline"></div>
-					<p>Spatial Strategies uses technology from:
-					jQuery,
-					jQuery Mobile,
-					Apache Cordova,
-					&amp; Adobe PhoneGap.</p>
+					<img src="img/FPA_logo.jpg" class="logo" />
+					<img src="img/jeromelogo.png" class="logo" />
+					<div class="borderline"></div>
+					<p>This activity is made possible by a research grant from Forecast Public Art and the Jerome Foundation </p>
+					<p>Spatial Strategies uses: jQuery, jQuery Mobile, Apache Cordova, &amp; Adobe PhoneGap.</p>
 					<p>Spatial Strategies is based on Guy Debord's Theory of the Dérive</p>
 
 		</div><!-- /ack -->
-
-			<div id="submit" class="card">
-				<img id="closesubmit" class="close" src="img/close.jpg" />
-				<form action="submit.js">
-					What is your strategy? <br /><input type="text" name="strategy" />
-					<input id="goButton" type="submit" value="Submit Strategy" />
-				</form>
-		</div><!-- /submit -->
 
 
 	</div><!-- /container-->

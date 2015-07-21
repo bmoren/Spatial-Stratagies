@@ -6,23 +6,32 @@
 //     document.addEventListener("deviceready", onDeviceReady, false);
 // }
 
-/////////////////////////////
-////NOTIFICATION FUNCTIONS///
-/////////////////////////////
-function playBeep(){
-	//console.log('beep!');
-	// navigator.notification.beep(1);
-}
 
-function vibrate(){
-	//console.log('bzzzzz,bzzzzz');
-	 // navigator.notification.vibrate(1000);
-}
 
 // device APIs are available?
 // TURN THIS ON TO ENABLE CORDOVA WITH THE onLoad() Above.
- // function onDeviceReady() {
+   // function onDeviceReady() {
   // Now safe to use device APIs
+  // 
+
+  	var notificationBeep = new Howl({
+  urls: ['beep.mp3']})
+
+  	/////////////////////////////
+  	////NOTIFICATION FUNCTIONS///
+  	/////////////////////////////
+
+  	function vibrate(){
+  		//console.log('bzzzzz,bzzzzz');
+  		   navigator.notification.vibrate(1000);
+  	}
+
+  	function playBeep(){
+  	//console.log('beep!');
+   	//navigator.notification.beep(1);
+   	notificationBeep.play();
+   	   	   
+  	}
 
 
 	function shuffle(o){ //v1.0
@@ -84,14 +93,14 @@ function vibrate(){
 		/////////////////////////////
 		function newTask(){
 
-			$("#HUD").html("begin walking in any direction now");
+			$("#HUD").html("begin walking in any direction");
 
 			var numMessage = Math.floor(slider_duration/slider_interval);
 
-			console.log('slider_duration:', slider_duration);
-			console.log('slider_interval:', slider_interval);
-			console.log('numMessage:', numMessage);
-			console.log('intervalMS', intervalMS);
+			// console.log('slider_duration:', slider_duration);
+			// console.log('slider_interval:', slider_interval);
+			// console.log('numMessage:', numMessage);
+			// console.log('intervalMS', intervalMS);
 
 			function exit(){
 				shuffle(task);
@@ -136,7 +145,7 @@ function vibrate(){
 		
 		}); //Close Main Go Button
 	});//Close onDocumentReady
-// }; //Close onDeviceReady
+  // }; //Close onDeviceReady
 
 
 

@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 	<title>Spatial Strategies</title>
@@ -17,6 +18,7 @@
 <body>
 
 	<div id="container" data-role="page"> 
+		<div id="exit">	<img class="close" src="img/close1px30p.jpg" /></div>
 		<div id="task" class="card">
 			<div id="HUD"></div>
 		</div><!-- /task -->
@@ -32,10 +34,10 @@
 			<div class="borderline"></div>
 
 			<label for="slider-duration">duration of walk (minutes): </label>
-			<input type="range" name="slider-duration" id="slider-duration" value="30" min="5" max="90" data-highlight="true" step="5"  />
+			<input type="range" name="slider-duration" id="slider-duration" value="30" min="5" max="60" data-highlight="true" step="5"  />
 
 			<label for="slider-interval">message interval (minutes): </label>
-			<input type="range" name="slider-interval" id="slider-interval" value="3" min="1" max="5" data-highlight="true" /> 
+			<input type="range" name="slider-interval" id="slider-interval" value="1" min="1" max="5" data-highlight="true" /> 
 
 
 			<div class="borderline"></div>
@@ -67,7 +69,7 @@
 			<div class="borderline"></div>
 
 			<div id="footer">
-				<a href="#" id="openack">Acknowledgements <!-- &amp; Licensing --></a>
+				<a href="#" id="openack">Acknowledgements &amp; Disclaimer <!-- &amp; Licensing --></a>
 			</div>
 
 		</div><!-- /param -->
@@ -75,22 +77,27 @@
 		<div id="ack" class="card">
 					<div id="closeAck"><img class="close" src="img/close1px30p.jpg" /></div>
 					<div class="borderline"></div>
-					<img src="img/FPA_logo.jpg" class="logo" />
-					<img src="img/jeromelogo.png" class="logo" />
+					<img src="img/FPA_Logo.jpg" class="flogo" />
+					<img src="img/jeromelogo.png" class="jlogo" />
 					<div class="borderline"></div>
 					<p>This activity is made possible by a research grant from Forecast Public Art and the Jerome Foundation </p>
 					<p>Spatial Strategies uses: jQuery, jQuery Mobile, Apache Cordova, &amp; Adobe PhoneGap.</p>
 					<p>Spatial Strategies is based on Guy Debord's Theory of the Dérive</p>
+					<div class="borderline"></div>
+					<h2>Disclaimer:</h2>
+					<p>The creators and distributors of this software assume no liability for accidents happening to, or injuries sustained by, users of the Spatial Strategies application. Always use common sense when interpreting the suggestions the app offers. </p>
 
 		</div><!-- /ack -->
 
 
 	</div><!-- /container-->
 
+
 	<!-- JS INCLUDES -->
 	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 	<script src="jquery/jquery-1.11.2.min.js"></script>
 	<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+	<script src="howler.js"></script>
 	<script src="tasks.js"></script>
 	<script src="generator.js"></script>
 	<script type="text/javascript"> onLoad(); </script>

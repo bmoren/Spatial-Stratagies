@@ -60,12 +60,12 @@ a{ font-size: 12px; }
 #switchCont label{ text-align: center; }
 .switch{ float:left; padding: 0px 20px 0px 20px; }
 /*.close{ height:30px; width:30px; position: absolute; top:15px; left:15px; z-index:9999; }
-*/.flogo{width:100%;}
-.jlogo{width:60%; margin: 0 auto;}
+*/.logo{width:100%;}
 .clear{ clear:both; }
 #ack{font-size: 10px;}
 #ack, #task{display:none;}
 #footer{text-align: center; }
 #footer a{font-size: 10px;}
 
+.close{height:30px;width: 30px;}
 

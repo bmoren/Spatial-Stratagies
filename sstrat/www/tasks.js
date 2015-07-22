@@ -51,7 +51,7 @@ var task = new Array(
 "stare at the ground",
 "slouch your shoulders",
 "stand up as tall as possible",
-"get in someones way",
+"get in someone's way",
 "drop what your carrying, then pick it up",
 "drag your feet",
 "take extra long steps",

@@ -1,0 +1,71 @@
+@font-face
+{
+font-family: QSL;
+/*src: url(Quicksand/Quicksand-Light.ttf);*/
+src:url(Oxygen/Oxygen-Light.ttf);
+}
+
+@font-face
+{
+font-family: QSR;
+/*src: url(Quicksand/Quicksand-Regular.ttf);*/
+src:url(Oxygen/Oxygen-Regular.ttf);
+}
+
+body {
+	font-family: QSR, "helvetica", "helvetica nue", "arial", sans-serif;
+	text-align:left;
+	font-size: 14px;
+}
+
+#title{font-size: 16px;
+text-align: center;
+font-weight: bold;}
+
+/*p{text-align: justify;}*/
+
+#container{
+	position: relative;
+	display: flex;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+a{ font-size: 12px; }
+
+#exit{
+	display:none;
+	position: absolute;
+	bottom:10px;
+	width:100%;
+}
+#exit img{
+  display:block;
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:auto;
+}
+
+.card{ 
+	padding: 3% 10% 3% 10%; 
+	height:100%;
+}
+.borderline{ border-bottom: 1px solid black; margin: 15px 0px 15px 0px; }
+#task{ font-size: 45px;}
+#switchCont{ width:230px; margin:auto; }
+#switchCont label{ text-align: center; }
+.switch{ float:left; padding: 0px 20px 0px 20px; }
+/*.close{ height:30px; width:30px; position: absolute; top:15px; left:15px; z-index:9999; }
+*/.logo{width:100%;}
+.clear{ clear:both; }
+#ack{font-size: 10px;}
+#ack, #task{display:none;}
+#footer{text-align: center; }
+#footer a{font-size: 10px;}
+
+.close{height:30px;width: 30px;}
+

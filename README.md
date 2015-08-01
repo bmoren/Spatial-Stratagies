@@ -1,4 +1,4 @@
-# Spatial Stratagies #
+# Spatial Strategies #
 
 <img src="/designFiles/screenshot.png" width="300px" />
 

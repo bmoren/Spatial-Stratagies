@@ -33,6 +33,8 @@ font-weight: bold;}
 	align-items: center;
 }
 
+#instructions{width:255px;}
+
 a{ font-size: 12px; }
 
 #exit{
@@ -53,6 +55,7 @@ a{ font-size: 12px; }
 .card{ 
 	padding: 3% 10% 3% 10%; 
 	height:100%;
+	margin:auto;
 }
 .borderline{ border-bottom: 1px solid black; margin: 15px 0px 15px 0px; }
 #task{ font-size: 45px;}

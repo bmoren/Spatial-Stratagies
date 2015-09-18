@@ -1,14 +1,14 @@
-///////////////Cordova Bix
-// Wait for device API libraries to load
+// ///////////////Cordova Bix
+// // Wait for device API libraries to load
 function onLoad() {
 document.addEventListener("deviceready", onDeviceReady, false);
 }
 
-// device APIs are available?
-// TURN THIS ON TO ENABLE CORDOVA WITH THE onLoad() Above.
+// // device APIs are available?
+// // TURN THIS ON TO ENABLE CORDOVA WITH THE onLoad() Above.
 function onDeviceReady() {
-// Now safe to use device APIs
-// 
+// // Now safe to use device APIs
+// // 
 
   	//array shuffle utility
 	function shuffle(o){ //v1.0

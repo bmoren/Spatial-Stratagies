@@ -87,6 +87,9 @@ $(function() { //Start jQuery Bix
 
 		var numMessage = Math.floor(slider_duration/slider_interval);
 
+		//enable insomnia
+		window.plugins.insomnia.keepAwake();
+
 		// console.log('slider_duration:', slider_duration);
 		// console.log('slider_interval:', slider_interval);
 		// console.log('numMessage:', numMessage);
@@ -99,6 +102,8 @@ $(function() { //Start jQuery Bix
 			// $("#HUD").html(""); //clear the window 
 			$("#task").fadeOut('slow', openParam);
 			function openParam(){$("#param").fadeIn("slow")}
+			//disable insomnia//
+			window.plugins.insomnia.allowSleepAgain()
 			clearInterval(taskGrabber);
 		}
 
